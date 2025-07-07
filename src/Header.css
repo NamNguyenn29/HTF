@@ -1,0 +1,46 @@
+:root {
+    /* --pastel-oragne: rgb(255, 200, 154); */
+    --strong-blue: rgb(14, 24, 36);
+    --over-dark: rgb(0, 0, 0, 0.3);
+}
+
+@import "tailwindcss";
+
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+
+.find-btn:hover,
+.book-now-btn:hover {
+    background-color: var(--strong-blue);
+    transition: ease-in-out 0.3s;
+}
+
+
+
+.member-login::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    top: 100%;
+    height: 3px;
+    background-color: white;
+    transition: width 0.4s ease-in-out;
+}
+
+
+.member-login:hover::after {
+    width: 100%;
+}
+
+
+.hotel-select::after {
+    content: "\f3c5";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: 50px;
+}
