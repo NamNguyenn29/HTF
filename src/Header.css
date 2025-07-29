@@ -37,10 +37,17 @@ img {
     width: 100%;
 }
 
+a {
+    font-weight: 500;
+    color: black;
+    text-decoration: inherit;
+}
 
-.hotel-select::after {
+
+
+/* .hotel-select::after {
     content: "\f3c5";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     margin-left: 50px;
-}
+} */

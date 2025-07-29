@@ -1,7 +1,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 
-export default function HotelSelector() {
+export default function HotelSelector({ top, hidden }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedHotel, setSelectedHotel] = useState("");
     const dropdownRef = useRef(null);
@@ -49,12 +49,12 @@ export default function HotelSelector() {
                     {/* <FaChevronDown className="ml-2 text-xs" /> */}
                     <div className="flex items-center gap-2">
                         {/* Icon location */}
-                        <i className="fa-solid fa-location-dot text-black text-sm"></i>
+                        <i className={`fa-solid fa-location-dot text-black text-sm ${hidden ? 'hidden' : ''} `}></i>
                     </div>
                 </div>
 
                 {isOpen && (
-                    <ul className="absolute -top-65 left-0 w-full bg-white  mt-1  z-10 max-h-60 overflow-auto">
+                    <ul className={`absolute ${top} left-0 w-full bg-white mt-1 z-10 max-h-60 overflow-auto`}>
                         {hotels.map((hotel) => (
                             <li
                                 key={hotel}

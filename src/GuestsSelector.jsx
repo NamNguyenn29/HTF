@@ -39,6 +39,7 @@ export default function GuestsSelector() {
                 <span className="text-black">
                     {adults} Adult{adults > 1 ? "s" : ""}, {children} Child
                 </span>
+
                 <FaUserFriends className="ml-2 text-black text-sm" />
             </div>
 

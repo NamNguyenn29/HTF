@@ -3,13 +3,19 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import DatePicker from './DatePicker';
 import GuestsSelector from './GuestsSelector';
 import HotelSelector from './HotelSelector';
-import { FaChevronDown } from 'react-icons/fa';
-export default function Header() {
 
+import { useState } from 'react';
+import BookForm from './BookForm';
+export default function Header() {
+    const [showBookForm, setShowBookForm] = useState(false);
+
+    const handleClickBookForm = () => {
+        setShowBookForm(true);
+    }
 
     return (
         <>
-            <div className="header">
+            <div className="header mb-15">
                 <div className="header-top-bar bg-black px-10">
                     <div className="header-group-btn flex items-center ">
                         <a className='logo w-[150px] block mx-auto mt-[-20px]' href="#"><img src="/images/logo.png" alt="" /></a>
@@ -61,11 +67,12 @@ export default function Header() {
                     </nav>
 
                     <div className="w-40 h-20 bg-rose-500 transform -skew-x-12 flex items-center justify-center book-now-btn text-xl">
-                        <span className=" cursor-pointer skew-x-12 text-white font-semibold ">
+                        <span className=" cursor-pointer skew-x-12 text-white font-semibold " onClick={handleClickBookForm}>
                             Book Now
                         </span>
                     </div>
 
+                    {showBookForm && <BookForm onClose={() => setShowBookForm(false)} />}
                 </div>
                 <div className="header-mid-container bg-[url(/images/Slider2.jpg)] bg-cover bg-center ">
                     <div className="overlay h-full bg-(--over-dark) py-10">
@@ -78,7 +85,7 @@ export default function Header() {
 
                         <div className="serch-container mx-50 py-6 px-6 bg-white flex gap-10 justify-between g-5">
 
-                            <HotelSelector />
+                            <HotelSelector top='-top-65 ' hidden='' />
                             <DatePicker />
 
                             <GuestsSelector />

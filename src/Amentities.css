@@ -1,0 +1,7 @@
+:root {
+    --pastel-orange: rgb(255, 200, 154);
+    --strong-blue: rgb(14, 24, 36);
+
+}
+
+@import "tailwindcss";
